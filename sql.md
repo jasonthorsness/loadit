@@ -90,6 +90,8 @@ def producer(queue, i, n):
         def toBytes(data):
             if isinstance(data, bytes):
                 pass
+            elif data is None:
+                return b''
             elif isinstance(data, str):
                 data = data.encode("utf-8")
             else:
